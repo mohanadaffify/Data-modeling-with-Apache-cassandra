@@ -21,11 +21,11 @@ The data are stored as a collection of csv files partitioned by date. The ETL pi
 
 ETL copies data from the date-partitioned csv files to a single csv file **event_datafile_new.csv** which is used to populate the denormalized Cassandra tables optimised for the 3 queries above. The 3 tables in the model are named after the song play query they are created to solve:
 
-1. **`music_table1** includes artist, song title and song length information for a given `sessionId` and `itemInSessionId`.
+1. **`music_history_by_session* includes artist, song title and song length information for a given `sessionId` and `itemInSessionId`.
 
-2. **`music_table2** includes artist, song and user for a given `userId` and `sessionId`.
+2. **`music_info_by_user_and_session** includes artist, song and user for a given `userId` and `sessionId`.
 
-3. **`music_table3`** includes user names for a given song.
+3. **`user_info_by_song`** includes user names for a given song.
 
 The example queries are returned as pandas dataframes to facilitate further data manipulation.
 
